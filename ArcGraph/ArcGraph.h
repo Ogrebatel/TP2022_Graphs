@@ -6,7 +6,8 @@
 #define GRAPHS_ARC_GRAPH_H
 
 #include "IGraph.h"
-#include "Vertice.h"
+#include "Vertex.h"
+#include "cassert"
 
 class ArcGraph: public IGraph {
  public:
@@ -24,7 +25,8 @@ class ArcGraph: public IGraph {
     ~ArcGraph() override;
 
 private:
-    std::vector<Vertice> _graph;
+    std::vector<Vertex> _graph;
+    size_t _size;
 };
 
 

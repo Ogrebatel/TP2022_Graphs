@@ -6,6 +6,7 @@
 #define GRAPHS_MATRIX_GRAPH_H
 
 #include <iostream>
+#include <cassert>
 #include "IGraph.h"
 
 class MatrixGraph: public IGraph {
@@ -24,7 +25,7 @@ class MatrixGraph: public IGraph {
     ~MatrixGraph() override;
 
 private:
-    std::vector<std::vector<int>> _graph;
+    std::vector<std::vector<bool>> _graph;
 };
 
 

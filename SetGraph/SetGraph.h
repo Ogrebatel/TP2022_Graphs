@@ -5,6 +5,7 @@
 #ifndef GRAPHS_SET_GRAPH_H
 #define GRAPHS_SET_GRAPH_H
 
+#include <cassert>
 #include "IGraph.h"
 #include "AVL.h"
 

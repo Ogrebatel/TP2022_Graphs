@@ -6,7 +6,7 @@ set(INCLUDE_DIRS ${CMAKE_CURRENT_SOURCE_DIR})
 
 set(HEADERS
         ${CMAKE_CURRENT_SOURCE_DIR}/ArcGraph.h
-        ${CMAKE_CURRENT_SOURCE_DIR}/Vertice.h
+        ${CMAKE_CURRENT_SOURCE_DIR}/Vertex.h
         )
 
 set(SOURCES
