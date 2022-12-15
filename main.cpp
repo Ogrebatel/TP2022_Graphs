@@ -32,5 +32,6 @@ int main() {
     mainBFS(graph, [](int vertex){ std::cout << vertex << " "; });
     std::cout << std::endl;
     mainDFS(graph, [](int vertex){ std::cout << vertex << " "; });
-    std::cout << std::endl;return 0;
+    std::cout << std::endl;
+    return 0;
 }

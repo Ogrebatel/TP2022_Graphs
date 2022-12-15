@@ -34,49 +34,89 @@ protected:
 
 TEST_F(FromArcGraph, constructArcGraph){
     ArcGraph toCheck(graph);
-    std::vector<int> check = {4, 6};
+    ASSERT_EQ(toCheck.VerticesCount(), graph.VerticesCount());
 
-    auto result = toCheck.GetNextVertices(5);
-    auto checkIter = check.begin();
-    for (auto &resultIter: result) {
-        EXPECT_EQ(*checkIter, resultIter);
-        checkIter++;
+    std::vector<int> canonical;
+    std::vector<int> check;
+
+    mainBFS(graph, [& canonical](int vertex){ canonical.push_back(vertex); });
+    mainBFS(toCheck, [& check](int vertex){ check.push_back(vertex); });
+
+    for (int i = 0; i < canonical.size(); ++i) {
+        EXPECT_EQ(canonical[i], check[i]);
+    }
+
+    canonical = std::vector<int>();
+    check = std::vector<int>();
+
+    for (int i = 0; i < canonical.size(); ++i) {
+        EXPECT_EQ(canonical[i], check[i]);
     }
 }
 
 TEST_F(FromArcGraph, constructListGraph){
     ListGraph toCheck(graph);
-    std::vector<int> check = {4, 6};
+    ASSERT_EQ(toCheck.VerticesCount(), graph.VerticesCount());
 
-    auto result = toCheck.GetNextVertices(5);
-    auto checkIter = check.begin();
-    for (auto &resultIter: result) {
-        EXPECT_EQ(*checkIter, resultIter);
-        checkIter++;
+    std::vector<int> canonical;
+    std::vector<int> check;
+
+    mainBFS(graph, [& canonical](int vertex){ canonical.push_back(vertex); });
+    mainBFS(toCheck, [& check](int vertex){ check.push_back(vertex); });
+
+    for (int i = 0; i < canonical.size(); ++i) {
+        EXPECT_EQ(canonical[i], check[i]);
+    }
+
+    canonical = std::vector<int>();
+    check = std::vector<int>();
+
+    for (int i = 0; i < canonical.size(); ++i) {
+        EXPECT_EQ(canonical[i], check[i]);
     }
 }
 
 TEST_F(FromArcGraph, constructMatrixGraph){
     MatrixGraph toCheck(graph);
-    std::vector<int> check = {4, 6};
+    ASSERT_EQ(toCheck.VerticesCount(), graph.VerticesCount());
 
-    auto result = toCheck.GetNextVertices(5);
-    auto checkIter = check.begin();
-    for (auto &resultIter: result) {
-        EXPECT_EQ(*checkIter, resultIter);
-        checkIter++;
+    std::vector<int> canonical;
+    std::vector<int> check;
+
+    mainBFS(graph, [& canonical](int vertex){ canonical.push_back(vertex); });
+    mainBFS(toCheck, [& check](int vertex){ check.push_back(vertex); });
+
+    for (int i = 0; i < canonical.size(); ++i) {
+        EXPECT_EQ(canonical[i], check[i]);
+    }
+
+    canonical = std::vector<int>();
+    check = std::vector<int>();
+
+    for (int i = 0; i < canonical.size(); ++i) {
+        EXPECT_EQ(canonical[i], check[i]);
     }
 }
 
 TEST_F(FromArcGraph, constructSetGraph){
     SetGraph toCheck(graph);
-    std::vector<int> check = {4, 6};
+    ASSERT_EQ(toCheck.VerticesCount(), graph.VerticesCount());
 
-    auto result = toCheck.GetNextVertices(5);
-    auto checkIter = check.begin();
-    for (auto &resultIter: result) {
-        EXPECT_EQ(*checkIter, resultIter);
-        checkIter++;
+    std::vector<int> canonical;
+    std::vector<int> check;
+
+    mainBFS(graph, [& canonical](int vertex){ canonical.push_back(vertex); });
+    mainBFS(toCheck, [& check](int vertex){ check.push_back(vertex); });
+
+    for (int i = 0; i < canonical.size(); ++i) {
+        EXPECT_EQ(canonical[i], check[i]);
+    }
+
+    canonical = std::vector<int>();
+    check = std::vector<int>();
+
+    for (int i = 0; i < canonical.size(); ++i) {
+        EXPECT_EQ(canonical[i], check[i]);
     }
 }
 
@@ -102,49 +142,89 @@ protected:
 
 TEST_F(FromListGraph, constructArcGraph){
     ArcGraph toCheck(graph);
-    std::vector<int> check = {2, 4, 6};
+    ASSERT_EQ(toCheck.VerticesCount(), graph.VerticesCount());
 
-    auto result = toCheck.GetNextVertices(3);
-    auto checkIter = check.begin();
-    for (auto &resultIter: result) {
-        EXPECT_EQ(*checkIter, resultIter);
-        checkIter++;
+    std::vector<int> canonical;
+    std::vector<int> check;
+
+    mainBFS(graph, [& canonical](int vertex){ canonical.push_back(vertex); });
+    mainBFS(toCheck, [& check](int vertex){ check.push_back(vertex); });
+
+    for (int i = 0; i < canonical.size(); ++i) {
+        EXPECT_EQ(canonical[i], check[i]);
+    }
+
+    canonical = std::vector<int>();
+    check = std::vector<int>();
+
+    for (int i = 0; i < canonical.size(); ++i) {
+        EXPECT_EQ(canonical[i], check[i]);
     }
 }
 
 TEST_F(FromListGraph, constructListGraph){
     ListGraph toCheck(graph);
-    std::vector<int> check = {2, 4, 6};
+    ASSERT_EQ(toCheck.VerticesCount(), graph.VerticesCount());
 
-    auto result = toCheck.GetNextVertices(3);
-    auto checkIter = check.begin();
-    for (auto &resultIter: result) {
-        EXPECT_EQ(*checkIter, resultIter);
-        checkIter++;
+    std::vector<int> canonical;
+    std::vector<int> check;
+
+    mainBFS(graph, [& canonical](int vertex){ canonical.push_back(vertex); });
+    mainBFS(toCheck, [& check](int vertex){ check.push_back(vertex); });
+
+    for (int i = 0; i < canonical.size(); ++i) {
+        EXPECT_EQ(canonical[i], check[i]);
+    }
+
+    canonical = std::vector<int>();
+    check = std::vector<int>();
+
+    for (int i = 0; i < canonical.size(); ++i) {
+        EXPECT_EQ(canonical[i], check[i]);
     }
 }
 
 TEST_F(FromListGraph, constructMatrixGraph){
     MatrixGraph toCheck(graph);
-    std::vector<int> check = {2, 4, 6};
+    ASSERT_EQ(toCheck.VerticesCount(), graph.VerticesCount());
 
-    auto result = toCheck.GetNextVertices(3);
-    auto checkIter = check.begin();
-    for (auto &resultIter: result) {
-        EXPECT_EQ(*checkIter, resultIter);
-        checkIter++;
+    std::vector<int> canonical;
+    std::vector<int> check;
+
+    mainBFS(graph, [& canonical](int vertex){ canonical.push_back(vertex); });
+    mainBFS(toCheck, [& check](int vertex){ check.push_back(vertex); });
+
+    for (int i = 0; i < canonical.size(); ++i) {
+        EXPECT_EQ(canonical[i], check[i]);
+    }
+
+    canonical = std::vector<int>();
+    check = std::vector<int>();
+
+    for (int i = 0; i < canonical.size(); ++i) {
+        EXPECT_EQ(canonical[i], check[i]);
     }
 }
 
 TEST_F(FromListGraph, constructSetGraph){
     SetGraph toCheck(graph);
-    std::vector<int> check = {2, 4, 6};
+    ASSERT_EQ(toCheck.VerticesCount(), graph.VerticesCount());
 
-    auto result = toCheck.GetNextVertices(3);
-    auto checkIter = check.begin();
-    for (auto &resultIter: result) {
-        EXPECT_EQ(*checkIter, resultIter);
-        checkIter++;
+    std::vector<int> canonical;
+    std::vector<int> check;
+
+    mainBFS(graph, [& canonical](int vertex){ canonical.push_back(vertex); });
+    mainBFS(toCheck, [& check](int vertex){ check.push_back(vertex); });
+
+    for (int i = 0; i < canonical.size(); ++i) {
+        EXPECT_EQ(canonical[i], check[i]);
+    }
+
+    canonical = std::vector<int>();
+    check = std::vector<int>();
+
+    for (int i = 0; i < canonical.size(); ++i) {
+        EXPECT_EQ(canonical[i], check[i]);
     }
 }
 
@@ -171,49 +251,90 @@ protected:
 
 TEST_F(FromMatrixGraph, constructArcGraph){
     ArcGraph toCheck(graph);
-    std::vector<int> check = {2, 3, 5, 6};
 
-    auto result = toCheck.GetNextVertices(1);
-    auto checkIter = check.begin();
-    for (auto &resultIter: result) {
-        EXPECT_EQ(*checkIter, resultIter);
-        checkIter++;
+    ASSERT_EQ(toCheck.VerticesCount(), graph.VerticesCount());
+
+    std::vector<int> canonical;
+    std::vector<int> check;
+
+    mainBFS(graph, [& canonical](int vertex){ canonical.push_back(vertex); });
+    mainBFS(toCheck, [& check](int vertex){ check.push_back(vertex); });
+
+    for (int i = 0; i < canonical.size(); ++i) {
+        EXPECT_EQ(canonical[i], check[i]);
+    }
+
+    canonical = std::vector<int>();
+    check = std::vector<int>();
+
+    for (int i = 0; i < canonical.size(); ++i) {
+        EXPECT_EQ(canonical[i], check[i]);
     }
 }
 
 TEST_F(FromMatrixGraph, constructListGraph){
     ListGraph toCheck(graph);
-    std::vector<int> check = {2, 3, 5, 6};
+    ASSERT_EQ(toCheck.VerticesCount(), graph.VerticesCount());
 
-    auto result = toCheck.GetNextVertices(1);
-    auto checkIter = check.begin();
-    for (auto &resultIter: result) {
-        EXPECT_EQ(*checkIter, resultIter);
-        checkIter++;
+    std::vector<int> canonical;
+    std::vector<int> check;
+
+    mainBFS(graph, [& canonical](int vertex){ canonical.push_back(vertex); });
+    mainBFS(toCheck, [& check](int vertex){ check.push_back(vertex); });
+
+    for (int i = 0; i < canonical.size(); ++i) {
+        EXPECT_EQ(canonical[i], check[i]);
+    }
+
+    canonical = std::vector<int>();
+    check = std::vector<int>();
+
+    for (int i = 0; i < canonical.size(); ++i) {
+        EXPECT_EQ(canonical[i], check[i]);
     }
 }
 
 TEST_F(FromMatrixGraph, constructMatrixGraph){
     MatrixGraph toCheck(graph);
-    std::vector<int> check = {2, 3, 5, 6};
+    ASSERT_EQ(toCheck.VerticesCount(), graph.VerticesCount());
 
-    auto result = toCheck.GetNextVertices(1);
-    auto checkIter = check.begin();
-    for (auto &resultIter: result) {
-        EXPECT_EQ(*checkIter, resultIter);
-        checkIter++;
+    std::vector<int> canonical;
+    std::vector<int> check;
+
+    mainBFS(graph, [& canonical](int vertex){ canonical.push_back(vertex); });
+    mainBFS(toCheck, [& check](int vertex){ check.push_back(vertex); });
+
+    for (int i = 0; i < canonical.size(); ++i) {
+        EXPECT_EQ(canonical[i], check[i]);
+    }
+
+    canonical = std::vector<int>();
+    check = std::vector<int>();
+
+    for (int i = 0; i < canonical.size(); ++i) {
+        EXPECT_EQ(canonical[i], check[i]);
     }
 }
 
 TEST_F(FromMatrixGraph, constructSetGraph){
     SetGraph toCheck(graph);
-    std::vector<int> check = {2, 3, 5, 6};
+    ASSERT_EQ(toCheck.VerticesCount(), graph.VerticesCount());
 
-    auto result = toCheck.GetNextVertices(1);
-    auto checkIter = check.begin();
-    for (auto &resultIter: result) {
-        EXPECT_EQ(*checkIter, resultIter);
-        checkIter++;
+    std::vector<int> canonical;
+    std::vector<int> check;
+
+    mainBFS(graph, [& canonical](int vertex){ canonical.push_back(vertex); });
+    mainBFS(toCheck, [& check](int vertex){ check.push_back(vertex); });
+
+    for (int i = 0; i < canonical.size(); ++i) {
+        EXPECT_EQ(canonical[i], check[i]);
+    }
+
+    canonical = std::vector<int>();
+    check = std::vector<int>();
+
+    for (int i = 0; i < canonical.size(); ++i) {
+        EXPECT_EQ(canonical[i], check[i]);
     }
 }
 
@@ -240,49 +361,89 @@ protected:
 
 TEST_F(FromSetGraph, constructArcGraph){
     ArcGraph toCheck(graph);
-    std::vector<int> check = {4};
+    ASSERT_EQ(toCheck.VerticesCount(), graph.VerticesCount());
 
-    auto result = toCheck.GetNextVertices(6);
-    auto checkIter = check.begin();
-    for (auto &resultIter: result) {
-        EXPECT_EQ(*checkIter, resultIter);
-        checkIter++;
+    std::vector<int> canonical;
+    std::vector<int> check;
+
+    mainBFS(graph, [& canonical](int vertex){ canonical.push_back(vertex); });
+    mainBFS(toCheck, [& check](int vertex){ check.push_back(vertex); });
+
+    for (int i = 0; i < canonical.size(); ++i) {
+        EXPECT_EQ(canonical[i], check[i]);
+    }
+
+    canonical = std::vector<int>();
+    check = std::vector<int>();
+
+    for (int i = 0; i < canonical.size(); ++i) {
+        EXPECT_EQ(canonical[i], check[i]);
     }
 }
 
 TEST_F(FromSetGraph, constructListGraph){
     ListGraph toCheck(graph);
-    std::vector<int> check = {4};
+    ASSERT_EQ(toCheck.VerticesCount(), graph.VerticesCount());
 
-    auto result = toCheck.GetNextVertices(6);
-    auto checkIter = check.begin();
-    for (auto &resultIter: result) {
-        EXPECT_EQ(*checkIter, resultIter);
-        checkIter++;
+    std::vector<int> canonical;
+    std::vector<int> check;
+
+    mainBFS(graph, [& canonical](int vertex){ canonical.push_back(vertex); });
+    mainBFS(toCheck, [& check](int vertex){ check.push_back(vertex); });
+
+    for (int i = 0; i < canonical.size(); ++i) {
+        EXPECT_EQ(canonical[i], check[i]);
+    }
+
+    canonical = std::vector<int>();
+    check = std::vector<int>();
+
+    for (int i = 0; i < canonical.size(); ++i) {
+        EXPECT_EQ(canonical[i], check[i]);
     }
 }
 
 TEST_F(FromSetGraph, constructMatrixGraph){
     MatrixGraph toCheck(graph);
-    std::vector<int> check = {4};
+    ASSERT_EQ(toCheck.VerticesCount(), graph.VerticesCount());
 
-    auto result = toCheck.GetNextVertices(6);
-    auto checkIter = check.begin();
-    for (auto &resultIter: result) {
-        EXPECT_EQ(*checkIter, resultIter);
-        checkIter++;
+    std::vector<int> canonical;
+    std::vector<int> check;
+
+    mainBFS(graph, [& canonical](int vertex){ canonical.push_back(vertex); });
+    mainBFS(toCheck, [& check](int vertex){ check.push_back(vertex); });
+
+    for (int i = 0; i < canonical.size(); ++i) {
+        EXPECT_EQ(canonical[i], check[i]);
+    }
+
+    canonical = std::vector<int>();
+    check = std::vector<int>();
+
+    for (int i = 0; i < canonical.size(); ++i) {
+        EXPECT_EQ(canonical[i], check[i]);
     }
 }
 
 TEST_F(FromSetGraph, constructSetGraph){
     SetGraph toCheck(graph);
-    std::vector<int> check = {4};
+    ASSERT_EQ(toCheck.VerticesCount(), graph.VerticesCount());
 
-    auto result = toCheck.GetNextVertices(6);
-    auto checkIter = check.begin();
-    for (auto &resultIter: result) {
-        EXPECT_EQ(*checkIter, resultIter);
-        checkIter++;
+    std::vector<int> canonical;
+    std::vector<int> check;
+
+    mainBFS(graph, [& canonical](int vertex){ canonical.push_back(vertex); });
+    mainBFS(toCheck, [& check](int vertex){ check.push_back(vertex); });
+
+    for (int i = 0; i < canonical.size(); ++i) {
+        EXPECT_EQ(canonical[i], check[i]);
+    }
+
+    canonical = std::vector<int>();
+    check = std::vector<int>();
+
+    for (int i = 0; i < canonical.size(); ++i) {
+        EXPECT_EQ(canonical[i], check[i]);
     }
 }
 

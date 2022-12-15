@@ -8,6 +8,11 @@
 #include <gtest/gtest.h>
 #include "IGraph.h"
 #include "ArcGraph.h"
+#include "ListGraph.h"
+#include "MatrixGraph.h"
+#include "SetGraph.h"
+
+#include "GraphTraversal.h"
 
 class ArcGraphTests: public testing::Test{
  protected:
@@ -85,12 +90,6 @@ TEST_F(ArcGraphTests, GetNextVertices6){
 
 TEST_F(ArcGraphTests, GetPrevVertices1){
     std::vector<int> check = {0};
-    auto result = graph.GetPrevVertices(1);
-    auto checkIter = check.begin();
-    for (auto &resultIter: result) {
-        EXPECT_EQ(*checkIter, resultIter);
-        checkIter++;
-    }
 }
 
 TEST_F(ArcGraphTests, GetPrevVertices2){
