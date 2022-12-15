@@ -9,11 +9,6 @@
 #include "Tests_MatrixGraph.h"
 #include "Tests_SetGraph.h"
 
-TEST(TEST, TEST){
-    EXPECT_TRUE(true);
-}
-
-
 int main() {
     testing::InitGoogleTest();
     return RUN_ALL_TESTS();

@@ -6,6 +6,10 @@ set(CMAKE_CXX_STANDARD 17)
 find_package(GTest REQUIRED)
 
 set(HEADERS
+        Tests_ArcGraph.h
+        Tests_ListGraph.h
+        Tests_MatrixGraph.h
+        Tests_SetGraph.h
         )
 
 set(SOURCES
