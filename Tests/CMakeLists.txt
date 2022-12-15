@@ -1,23 +1,23 @@
 cmake_minimum_required(VERSION 3.23)
-project(GRAPHS)
+project(GRAPH_TESTS)
 
 set(CMAKE_CXX_STANDARD 17)
 
-option (ENABLE_TESTING "enable functions for testing" ON)
+find_package(GTest REQUIRED)
 
-add_subdirectory(IGraph)
+set(HEADERS
+        )
 
-add_subdirectory(ArcGraph)
-add_subdirectory(ListGraph)
-add_subdirectory(MatrixGraph)
-add_subdirectory(SetGraph)
+set(SOURCES
+        tests.cpp
+        )
 
-add_subdirectory(Internals)
-
-add_executable(${PROJECT_NAME} main.cpp)
+add_executable(${PROJECT_NAME} ${SOURCES} ${HEADERS})
 
 target_link_libraries(
         ${PROJECT_NAME}
+
+        GTest::gtest_main
 
         ${IGRAPH_LIBRARIES}
 
@@ -41,6 +41,5 @@ target_include_directories(
         ${GRAPH_INTERNALS_INCLUDE_DIRS}
 )
 
-if (ENABLE_TESTING)
-    add_subdirectory(Tests)
-endif ()
+enable_testing()
+

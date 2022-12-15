@@ -9,7 +9,7 @@ ArcGraph::ArcGraph(size_t size): _size(size) {}
 ArcGraph::ArcGraph(const IGraph &graph): _size(graph.VerticesCount()) {
     for (int i = 0; i < _size; ++i) {
         auto nextVertices = graph.GetNextVertices(i);
-        for (auto vertex : nextVertices) {
+        for (auto &vertex : nextVertices) {
             _graph.emplace_back(i, vertex);
         }
     }
@@ -49,3 +49,5 @@ std::vector<int> ArcGraph::GetPrevVertices(int vertex) const {
 
     return result;
 }
+
+ArcGraph::~ArcGraph() = default;

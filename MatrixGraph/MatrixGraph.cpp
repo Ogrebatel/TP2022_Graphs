@@ -5,7 +5,7 @@
 #include "MatrixGraph.h"
 
 MatrixGraph::MatrixGraph(size_t size): _graph(size) {
-    for (auto iter: _graph) {
+    for (auto &iter: _graph) {
         iter.resize(size, false);
     }
 }
@@ -13,7 +13,7 @@ MatrixGraph::MatrixGraph(size_t size): _graph(size) {
 MatrixGraph::MatrixGraph(const IGraph &graph): MatrixGraph(graph.VerticesCount()) {
     for (int i = 0; i < _graph.size(); ++i) {
         auto nextVertices = graph.GetNextVertices(i);
-        for (auto vertex : nextVertices) {
+        for (auto &vertex : nextVertices) {
             _graph[i][vertex] = true;
         }
     }

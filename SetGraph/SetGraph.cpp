@@ -9,7 +9,7 @@ SetGraph::SetGraph(size_t size): _graph(size) {}
 SetGraph::SetGraph(const IGraph &graph): SetGraph(graph.VerticesCount()) {
     for (int i = 0; i < _graph.size(); ++i) {
         auto nextVertices = graph.GetNextVertices(i);
-        for (auto vertex : nextVertices) {
+        for (auto &vertex : nextVertices) {
             _graph[i].insert(vertex);
         }
     }
@@ -29,7 +29,7 @@ std::vector<int> SetGraph::GetNextVertices(int vertex) const {
     assert(vertex >= 0 && vertex < _graph.size());
     auto result = std::vector<int>();
 
-    for (auto iter: _graph[vertex]) {
+    for (auto &iter: _graph[vertex]) {
         result.push_back(iter);
     }
 
@@ -41,7 +41,7 @@ std::vector<int> SetGraph::GetPrevVertices(int vertex) const {
     std::vector<int> result;
 
     for (int from = 0; from < _graph.size(); from++) {
-        for (auto to: _graph[from]) {
+        for (auto &to: _graph[from]) {
             if (to == vertex)
                 result.push_back(from);
         }

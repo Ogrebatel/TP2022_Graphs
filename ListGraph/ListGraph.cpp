@@ -4,9 +4,7 @@
 
 #include "ListGraph.h"
 
-ListGraph::ListGraph(size_t size) {
-
-}
+ListGraph::ListGraph(size_t size): _graph(size){}
 
 ListGraph::ListGraph(const IGraph &graph): _graph(graph.VerticesCount()) {
     for (int i = 0; i < graph.VerticesCount(); i++) {
@@ -35,7 +33,7 @@ std::vector<int> ListGraph::GetPrevVertices(int vertex) const {
     std::vector<int> prevVertices;
 
     for (int from = 0; from < _graph.size(); from++) {
-        for (int to: _graph[from]) {
+        for (auto &to: _graph[from]) {
             if (to == vertex)
                 prevVertices.push_back(from);
         }
