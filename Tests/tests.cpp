@@ -8,6 +8,7 @@
 #include "Tests_ListGraph.h"
 #include "Tests_MatrixGraph.h"
 #include "Tests_SetGraph.h"
+#include "Tests_Constructors.h"
 
 int main() {
     testing::InitGoogleTest();
